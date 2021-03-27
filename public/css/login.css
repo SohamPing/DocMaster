@@ -1,0 +1,216 @@
+html{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    /*overflow-y: hidden; /* Hide vertical scrollbar */
+    /*overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.left-box{
+    height: 100%;
+    width: 40%;
+    background-color: #127681;
+}
+
+.right-box{
+    height: 100%;
+    width: 60%;
+}
+
+
+.topbar{
+    width: 100%;
+    height: 8.5rem;
+}
+
+.topimg{
+    width: 6rem;
+    margin-top: 1rem;
+    margin-left:3rem;
+    margin-right: 2rem;
+}
+
+.brandname{
+    display: inline-block;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.catcy-content{
+    margin-top: 15rem;
+}
+
+.welcome{
+    margin: 0.5vh 2vh;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.thicc-line{
+    margin-top: 2rem;
+    width: 40%;
+    margin-left: 2rem;
+    height: 10px;
+    border-radius: 2rem;
+    background-color: #10375c;
+}
+
+.catchy-line{
+    padding-right: 3rem;
+    font-size: 5vh;
+    font-family: 'Sansita Swashed', cursive;
+    margin-left: 2vh;
+    display: inline-block;
+    color: white;
+}
+
+.castlediv{
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.castleimage{
+    text-align: center;
+    width: 30%;
+    opacity: 90%; 
+}
+
+.login-box{
+    text-align: center;
+    margin-left: auto;
+    width: 100%;
+    height: 60vh;
+    padding: auto;
+    
+}
+
+.login-img-div{
+    padding: 1vh;
+    width: 100%;
+    text-align: center;
+
+}
+
+.login-img{
+    text-align: center;
+    width: 20vh;
+}
+
+.signinheading{
+    margin-top: 6rem;
+    font-size: 7vh;
+    color: #127681;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+
+.login-email{
+    border-radius: 2rem;
+    font-size: 150%;
+    color: #10375c;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    margin-left:auto ;
+    margin-top: 5vh;
+    border: black 1px solid;
+    width: 60%;
+    height: 40px;
+}
+
+::placeholder{
+    color: #10375c;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.forgotpass{
+    background-color: transparent;
+    border: 0ch;
+    margin-top: 1.5rem;
+    color: #10375c;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.forgotpass:hover{
+    cursor: pointer;
+    color: #127681;
+}
+
+.signinbutton{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 140%;
+    color: #10375c;
+    text-align: center;
+    margin-top: 3vh;
+    background-color: #f4a72e;
+    width: 30%;
+    height: 6%;
+    border-radius: 1vh;
+}
+
+.signinbutton:hover{
+    background-color: #127681;
+    color: white;
+}
+
+.new-here{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 140%;
+    color: #10375c;
+    text-align: center;
+    margin-top: 3vh;
+
+}
+
+.new-here-button{
+    color: #127681;
+    border: none;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 700px) {
+    html{
+        overflow: visible;
+    }
+
+    .thicc-line{
+        visibility: hidden;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+    .catcy-content{
+        margin-top: 4rem;
+
+    }
+    .catchy-line{
+        visibility: hidden;
+    }
+    .left-box{
+        text-align: center;
+        height: 40%;
+        width: 100%;
+    }
+    .right-box{
+        height: 100%;
+        width: 100%;
+    }
+    
+  }

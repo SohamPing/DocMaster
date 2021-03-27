@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/icon.ico">
+    <title>DocMaster</title>
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<!--FONTS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Sansita+Swashed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Ubuntu:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body onload="getuid()" >
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+    <input style="visibility: hidden;" value="<%=Id%>" id="getid" type="text">
+    <input style="visibility: hidden;" value="<%=doclen%>" id="getarr" type="text">
+    <input style="visibility: hidden;" value="<%=docnum%>" id="getnum" type="text">
+    
+    <button onclick="location.href='/';" class="btn btn-lg btn-primary signoutbt">Sign out</button>
+  
+    <div class="container" >
+        <div style="position: relative;" class="upperpart">
+            <h2 style="display: inline-block">Welcome <%=Name%> </h2>  
+        </div>
+        <div class="fileuploaddiv" >
+            <form  action="/StudentDashboard/id=<%=Id%>", method="POST">
+                
+                <center>
+                    <h3>Name of the Document</h3>
+                        <input autocomplete="off" type="text" id="filenameip" name="filename" placeholder="e.g: Marksheet "> 
+                </center>
+                <center>
+                    <div style=" margin-top: 3vh;" class="input-file-container"> 
+                        <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label> 
+                        <input type="file" style="margin-left: 12vh;" class="hotkanahiahe" name="bblogo" id="bblogo">
+                       
+                        <button id="submitButton" style="margin-top: 1rem; background-color: #f4a72e;" class="btn btn-lg btn primary" >Submit</button>
+                      </div>
+                      <script>
+                            // var firebaseConfig = {
+                            //     apiKey: "AIzaSyDqq4CrAW3Qh4LNMLt3MWgj9gOhZxsnjzQ",
+                            //     authDomain: "docmaster-69.firebaseapp.com",
+                            //     projectId: "docmaster-69",
+                            //     storageBucket: "docmaster-69.appspot.com",
+                            //     messagingSenderId: "113213208283",
+                            //     appId: "1:113213208283:web:e1fb855d6dd36851c4befe",
+                            //     measurementId: "G-Y7QBHWQ944"
+                            // };
+                            // // Initialize Firebase
+                            // firebase.initializeApp(firebaseConfig);
+                            // const db = admin.firestore();
+                            // var storage = firebase.storage();
+                            // Get a reference to the storage service, which is used to create references in your storage bucket
+                           
+                            // var fileButton = document.getElementById('bblogo');
+                            // fileButton.addEventListener('change',function(e){
+                            // console.log("INSIDE FUNCTION");
+                            // const file = e.target.files[0];
+                            // console.log(file);
+                            // var storageRef =firebase.storage().ref('ganditguli/'+filename);
+                            // var task = storageRef.put(file);
+                            // });
+                      </script>
+                </center>   
+            </form>
+           
+        </div>
+        <center>
+            <div style="margin-top: 1vh; padding: 1rem; width: 60%; background-color: #ccffbd;
+                        border-radius: 2rem;
+                        border: #282846 solid 2px;
+            " class="doclistdiv">
+                <% var j=0,arr = doclen%>
+                <%for(var i = 0 ;i < docnum; i++){%>
+                       
+                        <button onclick="getlink(this)" id="docbutton<%=i%>" style="background-color: #282846; color: white;margin: 1vh; border-radius: 1rem;
+                        border: #282846 solid 2px;"><%=doclen[i]%></button>
+                        <br>
+                    <%}%>
+            
+           
+        </div>
+        <div class="img" >
+            <img style="margin: 1rem;" width="300" height="300" id="docimg" src="/images/white.png" alt="Your Document Here" srcset="">
+        </div>
+       
+    </div>
+
+        </center>
+       
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+<script src="/__/firebase/8.3.1/firebase-firestore.js"></script>
+<script src="/__/firebase/8.3.1/firebase-storage.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+<script src=/js/dashboard.js ></script>
+
+<script>
+      var firebaseConfig = {
+      apiKey: "AIzaSyDqq4CrAW3Qh4LNMLt3MWgj9gOhZxsnjzQ",
+      authDomain: "docmaster-69.firebaseapp.com",
+      projectId: "docmaster-69",
+      storageBucket: "docmaster-69.appspot.com",
+      messagingSenderId: "113213208283",
+      appId: "1:113213208283:web:e1fb855d6dd36851c4befe",
+      measurementId: "G-Y7QBHWQ944"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+</body>
+</html>

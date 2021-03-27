@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/icon.ico">
+    <title>DocMaster</title>
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<!--FONTS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Sansita+Swashed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Ubuntu:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container" >
+        <div class="left-box" >
+            <img class="topimg" src="/images/icon.png" alt="">
+        <h2 class="brandname">DocMaster</h2>
+            <div class="catcy-content" >
+                <h1 class="welcome" >
+                    Welcome Back to
+                </h1>
+                <h1 class="welcome" >
+                    DocMaster
+                </h1>
+                <div class="thicc-line" ></div>
+                <h2 class="catchy-line" >
+                    "Thank you Mario but the cloud moved all your documents to another castle"
+                </h2>
+                <!-- <div class="castlediv" >
+                    <img class="castleimage" src="/images/castle.png" alt="" >
+                </div> -->
+            </div>
+        </div>
+
+        <div class="right-box">
+            <h2 class="signinheading" >
+                Sign up to continue
+            </h2>
+            <div class="login-img-div" >
+                <img class="login-img" src="/images/icon.png" alt="">
+            </div>  
+                <div class="login-box" >
+                    <form action="/signup" method="POST">
+                        <input placeholder="Name" class="login-email" type="text" name="name" id="name" required>
+                       
+                        <input placeholder="Email address" class="login-email" type="email" name="email" id="loginemail" required>
+                        <input placeholder="Password" type="password" class="login-email"  name="password" id="inputpassword" required>
+                        <hr>
+                        <label  style="  font-size: 150%;
+                        color: #10375c;
+                        font-family: 'Ubuntu', sans-serif;
+                        text-align: center;
+                        margin-left:auto; margin-right: 2rem;" for="userstatus">You identify yourself as: </label>
+                        <select name="status" class="form-select" id="userstatus">
+                            <option value="teacher">Teacher</option>
+                            <option value="student">Student</option>   
+                        </select>
+                       <br>
+                       <button class=" btn btn-large signinbutton" type="submit" >Sign Up</button>
+                        <h4 onclick="" class="forgotpass" >Forgot Password?</h4>    
+                     </form>
+                    <p class="new-here" >Already have an account? <button onclick="window.open('/signin','_self');" class="new-here-button" >Sign In</button></p>
+                </div>
+            
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</body>
+</html>
